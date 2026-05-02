@@ -1,0 +1,214 @@
+2026-05-02 04:26:45 - evalscope - INFO: Running with native backend
+2026-05-02 04:26:45 - evalscope - INFO: Dump task config to ./outputs/20260502_042645/configs/task_config.yaml
+2026-05-02 04:26:45 - evalscope - INFO: {
+    "model": "./Qwen3-0.6B",
+    "model_id": "Qwen3-0.6B",
+    "model_args": {},
+    "model_task": "text_generation",
+    "chat_template": null,
+    "datasets": [
+        "data_collection"
+    ],
+    "dataset_args": {
+        "data_collection": {
+            "dataset_id": "./datasets/Qwen3-Test-Collection",
+            "filters": {
+                "remove_until": "</think>"
+            }
+        }
+    },
+    "dataset_dir": "/home/yutonwu6/.cache/modelscope/hub/datasets",
+    "dataset_hub": "modelscope",
+    "repeats": 1,
+    "generation_config": {
+        "timeout": 60000,
+        "batch_size": 128,
+        "stream": true,
+        "max_tokens": 30000,
+        "top_p": 0.95,
+        "temperature": 0.6,
+        "top_k": 20,
+        "n": 1
+    },
+    "eval_type": "openai_api",
+    "eval_backend": "Native",
+    "eval_config": null,
+    "limit": 100,
+    "eval_batch_size": 128,
+    "use_cache": null,
+    "rerun_review": false,
+    "work_dir": "./outputs/20260502_042645",
+    "no_timestamp": false,
+    "enable_progress_tracker": false,
+    "ignore_errors": false,
+    "debug": false,
+    "seed": 42,
+    "api_url": "http://127.0.0.1:8000/v1/chat/completions",
+    "timeout": 60000,
+    "stream": true,
+    "judge_strategy": "auto",
+    "judge_worker_num": null,
+    "judge_model_args": {},
+    "analysis_report": false,
+    "collect_perf": true,
+    "use_sandbox": false,
+    "sandbox_type": "docker",
+    "sandbox_manager_config": {},
+    "evalscope_version": "1.6.1"
+}
+2026-05-02 04:26:45 - evalscope - INFO: Start loading benchmark dataset: data_collection
+2026-05-02 04:26:45 - evalscope - INFO: Loading dataset from ./datasets/Qwen3-Test-Collection
+2026-05-02 04:26:46 - evalscope - INFO: Start evaluating 1 subsets of data_collection: ['default']
+2026-05-02 04:26:46 - evalscope - INFO: Unified pool: 100 items to process, 0 already fully cached (100 total across all subsets).
+2026-05-02 04:26:46 - evalscope - INFO: Loading model for prediction...
+2026-05-02 04:26:46 - evalscope - INFO: Creating model ./Qwen3-0.6B with eval_type=openai_api base_url=http://127.0.0.1:8000/v1/chat/completions, config={'timeout': 60000, 'retries': 5, 'retry_interval': 10, 'batch_size': 128, 'stream': True, 'max_tokens': 30000, 'top_p': 0.95, 'temperature': 0.6, 'top_k': 20, 'n': 1}, model_args={}
+2026-05-02 04:26:46 - evalscope - INFO: Model loaded successfully.
+2026-05-02 04:27:47 - evalscope - INFO: Evaluating[data_collection]  61%| 61/100 [Elapsed: 01:00 < Remaining: 00:44,  1.15s/it]
+2026-05-02 04:28:48 - evalscope - INFO: Evaluating[data_collection]  80%| 80/100 [Elapsed: 02:01 < Remaining: 01:06,  3.31s/it]
+2026-05-02 04:29:49 - evalscope - INFO: Evaluating[data_collection]  83%| 83/100 [Elapsed: 03:02 < Remaining: 04:29, 15.85s/it]
+2026-05-02 04:30:49 - evalscope - INFO: Evaluating[data_collection]  86%| 86/100 [Elapsed: 04:02 < Remaining: 02:26, 10.47s/it]
+2026-05-02 04:31:51 - evalscope - INFO: Evaluating[data_collection]  88%| 88/100 [Elapsed: 05:05 < Remaining: 05:26, 27.21s/it]
+2026-05-02 04:32:52 - evalscope - INFO: Evaluating[data_collection]  89%| 89/100 [Elapsed: 06:05 < Remaining: 06:42, 36.59s/it]
+2026-05-02 04:33:52 - evalscope - INFO: Evaluating[data_collection]  90%| 90/100 [Elapsed: 07:06 < Remaining: 07:38, 45.87s/it]
+2026-05-02 04:34:53 - evalscope - INFO: Evaluating[data_collection]  95%| 95/100 [Elapsed: 08:06 < Remaining: 01:25, 17.12s/it]
+2026-05-02 04:35:53 - evalscope - INFO: Evaluating[data_collection]  98%| 98/100 [Elapsed: 09:06 < Remaining: 00:30, 15.04s/it]
+2026-05-02 04:36:54 - evalscope - INFO: Evaluating[data_collection]  98%| 98/100 [Elapsed: 10:07 < Remaining: 00:30, 15.04s/it]
+2026-05-02 04:37:52 - evalscope - INFO: Evaluating[data_collection] 100%| 100/100 [Elapsed: 11:05 < Remaining: 00:00, 38.89s/it]
+2026-05-02 04:37:52 - evalscope - INFO: Unified pool finished for data_collection.
+2026-05-02 04:37:52 - evalscope - INFO: Aggregating scores for subset: default
+2026-05-02 04:37:52 - evalscope - INFO: Generating report...
+2026-05-02 04:37:52 - evalscope - INFO: subset_level Report:
++-----------+--------------+------------------+------------+-------+
+| task_type | dataset_name |   subset_name    | micro_avg. | count |
++-----------+--------------+------------------+------------+-------+
+|   exam    |   mmlu_pro   |       law        |    0.2     |  10   |
+|   exam    |   mmlu_pro   |       math       |    0.5     |  10   |
+|   exam    |   mmlu_pro   |      other       |    0.3     |  10   |
+|   exam    |   mmlu_pro   |     physics      |   0.5556   |   9   |
+|   exam    |   mmlu_pro   |    psychology    |   0.3333   |   9   |
+|   exam    |   mmlu_pro   |     biology      |   0.125    |   8   |
+|   exam    |   mmlu_pro   |    philosophy    |    0.0     |   8   |
+|   exam    |   mmlu_pro   |     business     |   0.5714   |   7   |
+|   exam    |   mmlu_pro   |    chemistry     |   0.4286   |   7   |
+|   exam    |   mmlu_pro   |      health      |   0.1429   |   7   |
+|   exam    |   mmlu_pro   |    economics     |   0.6667   |   6   |
+|   exam    |   mmlu_pro   |   engineering    |    0.2     |   5   |
+|   exam    |   mmlu_pro   | computer science |   0.6667   |   3   |
+|   exam    |   mmlu_pro   |     history      |    0.0     |   1   |
++-----------+--------------+------------------+------------+-------+
+2026-05-02 04:37:52 - evalscope - INFO: dataset_level Report:
++-----------+--------------+------------+------------+---------------+-------+
+| task_type | dataset_name | micro_avg. | macro_avg. | weighted_avg. | count |
++-----------+--------------+------------+------------+---------------+-------+
+|   exam    |   mmlu_pro   |    0.34    |   0.335    |     0.34      |  100  |
++-----------+--------------+------------+------------+---------------+-------+
+2026-05-02 04:37:52 - evalscope - INFO: task_level Report:
++-----------+------------+------------+---------------+-------+
+| task_type | micro_avg. | macro_avg. | weighted_avg. | count |
++-----------+------------+------------+---------------+-------+
+|   exam    |    0.34    |   0.335    |     0.34      |  100  |
++-----------+------------+------------+---------------+-------+
+2026-05-02 04:37:52 - evalscope - INFO: tag_level Report:
++------+------------+------------+---------------+-------+
+| tags | micro_avg. | macro_avg. | weighted_avg. | count |
++------+------------+------------+---------------+-------+
+|  en  |    0.34    |   0.335    |     0.34      |  100  |
++------+------------+------------+---------------+-------+
+2026-05-02 04:37:52 - evalscope - INFO: category_level Report:
++-----------+-----------+------------+------------+---------------+-------+
+| category0 | category1 | micro_avg. | macro_avg. | weighted_avg. | count |
++-----------+-----------+------------+------------+---------------+-------+
+|   Qwen3   |  English  |    0.34    |   0.335    |     0.34      |  100  |
++-----------+-----------+------------+------------+---------------+-------+
+2026-05-02 04:37:52 - evalscope - INFO: 
+data_collection report table:
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Model      | Dataset         | Metric   | Subset                    |   Num |   Score | Cat.0   | Cat.1   |
++============+=================+==========+===========================+=======+=========+=========+=========+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/biology          |     8 |  0.125  | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/business         |     7 |  0.5714 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/chemistry        |     7 |  0.4286 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/computer science |     3 |  0.6667 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/economics        |     6 |  0.6667 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/engineering      |     5 |  0.2    | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/health           |     7 |  0.1429 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/history          |     1 |  0      | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/law              |    10 |  0.2    | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/math             |    10 |  0.5    | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/other            |    10 |  0.3    | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/philosophy       |     8 |  0      | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/physics          |     9 |  0.5556 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/psychology       |     9 |  0.3333 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | OVERALL                   |   100 |  0.34   | -       |         |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+ 
+
+2026-05-02 04:37:52 - evalscope - INFO: Skipping report analysis (`analysis_report=False`).
+2026-05-02 04:37:52 - evalscope - INFO: Dump report to: ./outputs/20260502_042645/reports/Qwen3-0.6B/data_collection.json 
+
+2026-05-02 04:37:52 - evalscope - INFO: 
+data_collection perf table:
+Model       Dataset            Num    Avg Lat    Avg TTFT    Avg TPOT    Avg Thpt    Avg In    Avg Out
+                                          (s)         (s)         (s)     (tok/s)       Tok        Tok
+----------  ---------------  -----  ---------  ----------  ----------  ----------  --------  ---------
+Qwen3-0.6B  data_collection    100     99.294      5.6922      0.0439       18.58    243.78    1844.71
+
+2026-05-02 04:37:52 - evalscope - INFO: Benchmark data_collection evaluation finished.
+2026-05-02 04:37:52 - evalscope - INFO: Running[eval] 100%| 1/1 [Elapsed: 11:06 < Remaining: 00:00, 666.75s/benchmark]
+2026-05-02 04:37:52 - evalscope - INFO: Overall report table: 
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Model      | Dataset         | Metric   | Subset                    |   Num |   Score | Cat.0   | Cat.1   |
++============+=================+==========+===========================+=======+=========+=========+=========+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/biology          |     8 |  0.125  | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/business         |     7 |  0.5714 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/chemistry        |     7 |  0.4286 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/computer science |     3 |  0.6667 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/economics        |     6 |  0.6667 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/engineering      |     5 |  0.2    | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/health           |     7 |  0.1429 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/history          |     1 |  0      | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/law              |    10 |  0.2    | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/math             |    10 |  0.5    | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/other            |    10 |  0.3    | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/philosophy       |     8 |  0      | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/physics          |     9 |  0.5556 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | mmlu_pro/psychology       |     9 |  0.3333 | Qwen3   | English |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+
+| Qwen3-0.6B | data_collection | acc      | OVERALL                   |   100 |  0.34   | -       |         |
++------------+-----------------+----------+---------------------------+-------+---------+---------+---------+ 
+
+2026-05-02 04:37:52 - evalscope - INFO: Overall perf table: 
+Model       Dataset            Num    Avg Lat    Avg TTFT    Avg TPOT    Avg Thpt    Avg In    Avg Out
+                                          (s)         (s)         (s)     (tok/s)       Tok        Tok
+----------  ---------------  -----  ---------  ----------  ----------  ----------  --------  ---------
+Qwen3-0.6B  data_collection    100     99.294      5.6922      0.0439       18.58    243.78    1844.71 
+
+2026-05-02 04:37:53 - evalscope - INFO: HTML report generated: /home/yutonwu6/PythonProjects/evalscope/outputs/20260502_042645/reports/report.html
+2026-05-02 04:37:53 - evalscope - INFO: Finished evaluation for Qwen3-0.6B on ['data_collection']
+2026-05-02 04:37:53 - evalscope - INFO: Output directory: ./outputs/20260502_042645

@@ -1,0 +1,177 @@
+{
+    "name": "data_collection",
+    "dataset_name": "data_collection",
+    "dataset_pretty_name": "",
+    "dataset_description": "",
+    "model_name": "Qwen3-0.6B",
+    "score": 0.36,
+    "metrics": [
+        {
+            "name": "acc",
+            "num": 100,
+            "score": 0.36,
+            "macro_score": 0.36,
+            "categories": [
+                {
+                    "name": [
+                        "Qwen3",
+                        "English"
+                    ],
+                    "num": 100,
+                    "score": 0.36,
+                    "macro_score": 0.3692,
+                    "subsets": [
+                        {
+                            "name": "mmlu_pro/biology",
+                            "score": 0.25,
+                            "num": 8
+                        },
+                        {
+                            "name": "mmlu_pro/business",
+                            "score": 0.7143,
+                            "num": 7
+                        },
+                        {
+                            "name": "mmlu_pro/chemistry",
+                            "score": 0.4286,
+                            "num": 7
+                        },
+                        {
+                            "name": "mmlu_pro/computer science",
+                            "score": 1.0,
+                            "num": 3
+                        },
+                        {
+                            "name": "mmlu_pro/economics",
+                            "score": 0.3333,
+                            "num": 6
+                        },
+                        {
+                            "name": "mmlu_pro/engineering",
+                            "score": 0.2,
+                            "num": 5
+                        },
+                        {
+                            "name": "mmlu_pro/health",
+                            "score": 0.4286,
+                            "num": 7
+                        },
+                        {
+                            "name": "mmlu_pro/history",
+                            "score": 0.0,
+                            "num": 1
+                        },
+                        {
+                            "name": "mmlu_pro/law",
+                            "score": 0.1,
+                            "num": 10
+                        },
+                        {
+                            "name": "mmlu_pro/math",
+                            "score": 0.5,
+                            "num": 10
+                        },
+                        {
+                            "name": "mmlu_pro/other",
+                            "score": 0.2,
+                            "num": 10
+                        },
+                        {
+                            "name": "mmlu_pro/philosophy",
+                            "score": 0.125,
+                            "num": 8
+                        },
+                        {
+                            "name": "mmlu_pro/physics",
+                            "score": 0.4444,
+                            "num": 9
+                        },
+                        {
+                            "name": "mmlu_pro/psychology",
+                            "score": 0.4444,
+                            "num": 9
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "analysis": "N/A",
+    "perf_metrics": {
+        "summary": {
+            "n_samples": 100,
+            "latency": {
+                "mean": 83.014226,
+                "std": 110.166853,
+                "min": 8.786915,
+                "25%": 23.761725,
+                "50%": 40.124685,
+                "75%": 81.902883,
+                "90%": 216.108998,
+                "99%": 504.104204,
+                "max": 632.602912
+            },
+            "throughput": {
+                "avg_output_tps": 20.84,
+                "avg_req_ps": 0.012
+            },
+            "usage": {
+                "input_tokens": {
+                    "mean": 243.78,
+                    "std": 110.848571,
+                    "min": 107.0,
+                    "25%": 159.75,
+                    "50%": 213.5,
+                    "75%": 274.25,
+                    "90%": 437.1,
+                    "99%": 575.13,
+                    "max": 588.0
+                },
+                "output_tokens": {
+                    "mean": 1729.91,
+                    "std": 2441.640035,
+                    "min": 172.0,
+                    "25%": 496.5,
+                    "50%": 837.0,
+                    "75%": 1695.25,
+                    "90%": 4209.4,
+                    "99%": 11478.03,
+                    "max": 15540.0
+                },
+                "total_tokens": {
+                    "mean": 1973.69,
+                    "std": 2475.526222,
+                    "min": 309.0,
+                    "25%": 691.0,
+                    "50%": 1064.0,
+                    "75%": 2067.75,
+                    "90%": 4553.9,
+                    "99%": 11742.95,
+                    "max": 16094.0
+                }
+            },
+            "ttft": {
+                "mean": 1.002477,
+                "std": 0.386692,
+                "min": 0.403637,
+                "25%": 0.685521,
+                "50%": 0.94404,
+                "75%": 1.349994,
+                "90%": 1.52826,
+                "99%": 1.677773,
+                "max": 1.680122
+            },
+            "tpot": {
+                "mean": 0.047022,
+                "std": 0.001959,
+                "min": 0.040682,
+                "25%": 0.046055,
+                "50%": 0.046776,
+                "75%": 0.047971,
+                "90%": 0.049983,
+                "99%": 0.05108,
+                "max": 0.051086
+            }
+        }
+    }
+}
